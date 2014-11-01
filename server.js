@@ -45,25 +45,25 @@ router.get('/login', function(req, res) {
     res.sendfile(__dirname + '/views/login.html');
 });
 
-router.get('/:username', function(req, res, next) {
-  // gets the value for the named parameter user_id from the url
+// router.get('/:username', function(req, res, next) {
+//   // gets the value for the named parameter user_id from the url
 
-  var url;
-  var user = req.param('username');
+//   var url;
+//   var user = req.param('username');
 
-  Comic.find({username: user}, function(err, comic) {
-    if (err) res.send(err);
-    if (comic[0] == null) {
-    	console.log("not found!");
-    	res.sendfile(__dirname + '/views/error.html');
-    }
-    else {
-    	console.log(comic);
-	    res.sendfile(__dirname + '/views/comic.html');
-    }
+//   User.find({username: user}, function(err, comic) {
+//     if (err) res.send(err);
+//     if (comic[0] == null) {
+//     	console.log("not found!");
+//     	res.sendfile(__dirname + '/views/error.html');
+//     }
+//     else {
+//     	console.log(comic);
+// 	    res.sendfile(__dirname + '/views/comic.html');
+//     }
  	
-  });
-});
+//   });
+// });
 
 
 // USERS
@@ -181,6 +181,45 @@ router.route('/api/unlikeidea')
 			});
 	});
 });
+
+router.route('/api/getallideaswithuser')
+	.get(function(req, res) {
+		var results = [];
+		var singleResult;
+		Idea.find( function(err, idea) {
+			if (err)
+				res.send(err);
+			var total = idea.length;
+			idea.forEach(function(i) {
+    			innerLoop(i)
+			});
+			//res.json(results);			
+
+			function innerLoop(idea) {
+				User.findOne({ideas: String(idea._id)}, function(e, user) {
+					if (e)
+						res.send(e);
+					singleResult = new Object();
+					singleResult.platform = idea.platform;
+					singleResult.description = idea.description;
+					singleResult.category = idea.category;
+					singleResult.tags = idea.tags;
+					singleResult.projects = idea.projects;
+					singleResult.likes = idea.likes;
+					singleResult.name = idea.name;
+					singleResult._id = idea._id;
+					singleResult.username = user.username;
+					singleResult.profilepic = user.profilepic;
+					results.push(singleResult);
+					if (results.length == total) {
+						res.json(results);
+					}
+		   		});
+			}
+
+	});
+});
+
 
 // PROJECTS
 

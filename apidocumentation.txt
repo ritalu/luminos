@@ -4,10 +4,12 @@ GET:
 ./api/users
 	- gets all users in db
 ./api/users/USERNAME
-	- gets the single user specified by the username, returns empty objecft if no user by that name
+	- gets the single user specified by the username, returns empty object if no user by that name
 
 ./api/ideas
 	- gets all ideas in db
+./api/getallideaswithuser
+	- gets all ideas as well as linked username, profile pic
 ./api/idea/IDEAID
 	- gets single idea by id
 ./api/likeidea?username=USERNAME&idea_id=IDEAID

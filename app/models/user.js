@@ -12,7 +12,8 @@ var UserSchema   = new Schema({
 	ideas: Array,
 	skills: Array,
 	website: Array,
-	github: String
+	github: String,
+	profilepic: String
 });
 
 module.exports = mongoose.model('User', UserSchema);
