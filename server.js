@@ -3,6 +3,9 @@
 // BASE SETUP
 // =============================================================================
 
+// add references to models
+var User     = require('./app/models/user');
+
 // call the packages we need
 var express    = require('express'); 		// call express
 var app        = express(); 				// define our app using express
@@ -13,7 +16,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 80; 		// set our port
+var port = process.env.PORT || 8000; 		// set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
