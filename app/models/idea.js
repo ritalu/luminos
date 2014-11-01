@@ -10,7 +10,8 @@ var IdeaSchema   = new Schema({
 	tags: String,
 	projects: Array,
 	likes: Array,
-	name: String
+	name: String,
+	creationdate: Date
 });
 
 module.exports = mongoose.model('Idea', IdeaSchema);

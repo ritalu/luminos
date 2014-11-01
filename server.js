@@ -18,12 +18,19 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8000; 		// set our port
+var port = process.env.PORT || 80; 		// set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router(); 				// get an instance of the express Router
 
+// middleware to use for all requests
+router.use(function(req, res, next) {
+	// do logging
+	next(); // make sure we go to the next routes and don't stop here
+});
+
+// USERS
 router.route('/api/users')
 
 	// create users
@@ -33,6 +40,10 @@ router.route('/api/users')
 		user.username = req.body.username;  
 		user.password = req.body.password;
 		user.email = req.body.email;
+		user.ideas = req.body.idea;
+		user.skills = req.body.skills;
+		user.website = req.body.website;
+		user.github = req.body.github;
 
 		//save and check for errors
 		user.save(function(err) {
@@ -62,11 +73,55 @@ router.route('/api/users/:username')
 	});
 });
 
+
+// IDEAS
+router.route('/api/ideas')
+
+	// create users
+	.post(function(req, res) {
+		console.dir(req);	
+		var idea = new Idea(); 		
+		idea.platform = req.body.platform; 
+		idea.description = req.body.description;
+		idea.category = req.body.category;
+		idea.tags = req.body.tags;
+		idea.projects = req.body.projects;
+		idea.likes = req.body.likes;
+		idea.name = req.body.name; 
+
+		//save and check for errors
+		idea.save(function(err) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Idea created!' });
+		})
+		
+	 })
+
+	// get all users
+	.get(function(req, res) {
+		Idea.find(function(err, users) {
+			if (err)
+				res.send(err);
+			res.json(users);
+	});
+});
+
+router.route('/api/ideas/:idea_id')
+	.get(function(req, res) {
+		Idea.findById(req.params.idea_id, function(err, bear) {
+			if (err)
+				res.send(err);
+			res.json(bear);
+	});
+});
+
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-app.use('/api', router);
+app.use('/', router);
 
 // START THE SERVER
 // =============================================================================

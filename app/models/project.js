@@ -11,7 +11,8 @@ var ProjectSchema   = new Schema({
 	name: String,
 	description: String,
 	likes: Array,
-	users: Array
+	users: Array,
+	creationdate: Date
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);

@@ -1,0 +1,11 @@
+API DOCUMENTATION
+
+GET:
+./api/users
+	- gets all users in db
+./api/users/[USERNAME HERE]
+	- gets the single user specified by the username, returns empty objecft if no user by that name
+
+POST:
+./api/users
+	- creates user
