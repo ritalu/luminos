@@ -269,6 +269,7 @@ router.route('/api/project/:project_id')
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/', router);
+app.use('/public', express.static(__dirname+'/public'));
 
 // START THE SERVER
 // =============================================================================
