@@ -18,7 +18,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 80; 		// set our port
+var port = process.env.PORT || 8000; 		// set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -29,6 +29,42 @@ router.use(function(req, res, next) {
 	// do logging
 	next(); // make sure we go to the next routes and don't stop here
 });
+
+router.get('/', function(req, res) {
+	console.log("in index");
+    res.sendfile(__dirname + '/views/index.html');
+});
+
+router.get('/signup', function(req, res) {
+	console.log("in signup");
+    res.sendfile(__dirname + '/views/signup.html');
+});
+
+router.get('/login', function(req, res) {
+	console.log("in login");
+    res.sendfile(__dirname + '/views/login.html');
+});
+
+router.get('/:username', function(req, res, next) {
+  // gets the value for the named parameter user_id from the url
+
+  var url;
+  var user = req.param('username');
+
+  Comic.find({username: user}, function(err, comic) {
+    if (err) res.send(err);
+    if (comic[0] == null) {
+    	console.log("not found!");
+    	res.sendfile(__dirname + '/views/error.html');
+    }
+    else {
+    	console.log(comic);
+	    res.sendfile(__dirname + '/views/comic.html');
+    }
+ 	
+  });
+});
+
 
 // USERS
 router.route('/api/users')
