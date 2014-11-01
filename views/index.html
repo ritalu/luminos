@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,300">
 		<title>luminos</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="./../public/js/getIdea.js"></script>
 		<link href="./../public/css/index.css" rel="stylesheet">
 		
 	</head>
@@ -12,13 +13,13 @@
 	<body>
         <div class="sidebar">
             <div class="menu">
-                <a href="/">
+                <a href="">
                     <div class="menu-item active">
                         Ideas
                         <div class="triangle"></div>
                     </div>
                 </a>
-                <a href="/">
+                <a href="">
                     <div class="menu-item">
                         Projects
                         <div class="triangle"></div>
@@ -43,7 +44,8 @@
                     <div class="desc"> 
                         <div class="text">Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. 
                         </div>
-                        <a href="/"><div class="readmore">Read more</div></a>
+                      ction() {               
+                 $  <a href="/"><div class="readmore">Read more</div></a>
                         <div class="actions">
                             <img src="../public/img/icon_like.png"> 100 
                             <img src="../public/img/icon_project.png"> 24 
@@ -93,12 +95,22 @@
 
         <script type="text/javascript">
             $(function() {               
-                 $(".menu a").click(function() {
+                console.log("test");    
+                $(".menu a").click(function() {
                     console.log("w");
                     $('.menu-item').removeClass('active');
                     $(this).children().first().addClass('active');
                 })
+             });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                console.log("hi");
+                load();
             });
+
+            
+
         </script>
 	</body>
 </html>
