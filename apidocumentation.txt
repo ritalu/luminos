@@ -3,9 +3,28 @@ API DOCUMENTATION
 GET:
 ./api/users
 	- gets all users in db
-./api/users/[USERNAME HERE]
+./api/users/USERNAME
 	- gets the single user specified by the username, returns empty objecft if no user by that name
 
+./api/ideas
+	- gets all ideas in db
+./api/idea/IDEAID
+	- gets single idea by id
+./api/likeidea?username=USERNAME&idea_id=IDEAID
+	- adds userID to idea.likes
+./api/unlikeidea?username==USERNAME&idea_id=IDEAID
+	- removes userID from idea.likes
+
+./api/projects
+	- gets all projects in db
+./api/project/PROJECTID
+	- gets single project by id
+
 POST:
+
 ./api/users
 	- creates user
+./api/ideas
+	- creates idea
+./api/projects
+	- creates project

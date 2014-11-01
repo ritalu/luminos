@@ -33,7 +33,6 @@ router.use(function(req, res, next) {
 // USERS
 router.route('/api/users')
 
-	// create users
 	.post(function(req, res) {
 		console.dir(req);	
 		var user = new User(); 		
@@ -45,7 +44,6 @@ router.route('/api/users')
 		user.website = req.body.website;
 		user.github = req.body.github;
 
-		//save and check for errors
 		user.save(function(err) {
 			if (err)
 				res.send(err);
@@ -74,10 +72,11 @@ router.route('/api/users/:username')
 });
 
 
+
+
 // IDEAS
 router.route('/api/ideas')
 
-	// create users
 	.post(function(req, res) {
 		console.dir(req);	
 		var idea = new Idea(); 		
@@ -89,14 +88,11 @@ router.route('/api/ideas')
 		idea.likes = req.body.likes;
 		idea.name = req.body.name; 
 
-		//save and check for errors
 		idea.save(function(err) {
 			if (err)
 				res.send(err);
-
 			res.json({ message: 'Idea created!' });
-		})
-		
+		})		
 	 })
 
 	// get all users
@@ -116,6 +112,82 @@ router.route('/api/ideas/:idea_id')
 			res.json(bear);
 	});
 });
+
+router.route('/api/likeidea')
+	.get(function(req, res) {
+		Idea.findById(req.query.idea_id, function(err, idea) {
+			if (err)
+				res.send(err);
+			idea.likes.push(req.query.username);
+			idea.save(function (err) {
+				if (err)
+					res.send(err);
+				res.json({ message: 'Idea updated!' });
+			});
+	});
+});
+
+router.route('/api/unlikeidea')
+	.get(function(req, res) {
+		Idea.findById(req.query.idea_id, function(err, idea) {
+			if (err)
+				res.send(err);
+			for (i = 0; i < idea.likes.length; i++) {
+				if (idea.likes[i] == req.query.username) {
+					console.log(idea.likes[i]);
+					idea.likes.splice(i, 1);					
+				}
+			}
+			idea.save(function (err) {
+				if (err)
+					res.send(err);
+				res.json({ message: 'Idea updated!' });
+			});
+	});
+});
+
+// PROJECTS
+
+router.route('/api/projects')
+
+	.post(function(req, res) {
+		console.dir(req);	
+		var project = new Project(); 		
+		project.platform = req.body.platform; 
+		project.link = req.body.link;
+		project.technologies = req.body.technologies;
+		project.completed = req.body.completed;
+		project.name = req.body.name;
+		project.description = req.body.description;
+		project.likes = req.body.likes;
+		project.users = req.body.users;
+
+		project.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json({ message: 'Project created!' });
+		})		
+	 })
+
+	// get all users
+	.get(function(req, res) {
+		Project.find(function(err, users) {
+			if (err)
+				res.send(err);
+			res.json(users);
+	});
+});
+
+router.route('/api/project/:project_id')
+	.get(function(req, res) {
+		Project.findById(req.params.project_id, function(err, bear) {
+			if (err)
+				res.send(err);
+			res.json(bear);
+	});
+});
+
+
 
 // more routes for our API will happen here
 
