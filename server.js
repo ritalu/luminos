@@ -5,6 +5,8 @@
 
 // add references to models
 var User     = require('./app/models/user');
+var Idea     = require('./app/models/idea');
+var Project     = require('./app/models/project');
 
 // call the packages we need
 var express    = require('express'); 		// call express
@@ -16,15 +18,48 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 80; 		// set our port
+var port = process.env.PORT || 8000; 		// set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router(); 				// get an instance of the express Router
 
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/', function(req, res) {
-	res.json({ message: 'hooray! welcome to our api!' });	
+router.route('/api/users')
+
+	// create users
+	.post(function(req, res) {
+		console.dir(req);	
+		var user = new User(); 		
+		user.username = req.body.username;  
+		user.password = req.body.password;
+		user.email = req.body.email;
+
+		//save and check for errors
+		user.save(function(err) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'User created!' });
+		})
+		
+	 })
+
+	// get all users
+	.get(function(req, res) {
+		User.find(function(err, users) {
+			if (err)
+				res.send(err);
+			res.json(users);
+	});
+});
+
+router.route('/api/users/:username')
+	.get(function(req, res) {
+		User.find( { username: req.params.username }, function(err, bear) {
+			if (err)
+				res.send(err);
+			res.json(bear);
+	});
 });
 
 // more routes for our API will happen here
