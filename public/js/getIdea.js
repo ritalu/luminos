@@ -37,7 +37,7 @@ var renderIdea=function(data){
          '</div>'
       };
 
-      $('.idea-container').append(content);
+      $('.idea-container').replaceWith(content);
     }
 }
 
@@ -48,7 +48,7 @@ var loadProj=function() {
     url:"./api/projects",
     success: function(data){
         console.log(data);
-        render(data);
+        renderProj(data);
     }
   });
 }
@@ -80,6 +80,6 @@ var renderProj=function(data){
          '</div>'
       };
 
-      $('.idea-container').append(content);
+      $('.idea-container').replaceWith(content);
     }
 }
