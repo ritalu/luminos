@@ -1,5 +1,5 @@
 var loadIdea=function() {
-    console.log("running load");
+    console.log("load idea");
   $.ajax({//initial ajax call 
     type:"GET",
     url:"./api/getallideaswithuser",
@@ -12,8 +12,19 @@ var loadIdea=function() {
 
 var loadProject = function() {
   console.log("load project");
+    $.ajax({//initial ajax call 
+    type:"GET",
+    url:"./api/getallprojectsswithuser",
+    success: function(data){
+        console.log(data);
+        renderIdea(data);
+    }
+  });
 }
 
+var renderProject = function (data) {
+  console.log(data);
+}
 
 var renderIdea=function(data){
   console.log("rendering");
