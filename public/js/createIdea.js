@@ -9,7 +9,7 @@ var createIdea=function() {
     data:"submit=1&name="+idea_name,
     success: function(data){
         console.log(data);
-        renderIdea(data);
+        displayResult(data);
     }
   });
 }
@@ -18,3 +18,6 @@ var getFormContent = function() {
   
 }
 
+var displayResult = function (data) {
+    console.log("final idea created!");
+}
