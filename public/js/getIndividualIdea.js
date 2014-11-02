@@ -86,7 +86,8 @@ var renderProject=function(data){
                     '<span>Inspired by:</span> <a href="../idea/' +  '">' + "this idea" + '</a><br>' + 
                     '<span>URL:</span> <a href="http://' + data.link + '">' + data.link + '</a><br>' +  
                     // <span>Platform:</span> android<br>
-                    // <span>Category:</span> social media <br><br>
+                    // <span>Category:</span> social media 
+                    +'<br><br>'+
                    data.description;
         $('.project').children('.desc').append(content);
 
