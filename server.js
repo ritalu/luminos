@@ -51,14 +51,29 @@ router.get('/signup', function(req, res) {
     res.sendfile(__dirname + '/views/signup.html');
 });
 
-router.get('/:anythingelse', function(req, res, next) {
+router.get('/idea/:idea_id', function(req, res, next) {	
+
+  var url;
+  var id = req.param('idea_id');
+  // lookup the user in the db so we can get their profile url
+  Idea.findById(id , function(err, idea) {
+    if (err) res.send(err);
+    if (idea == null) {
+    	console.log("not found!");
+    	res.sendfile(__dirname + '/views/error.html');
+    }
+    else {
+    	console.log(idea);
+	    res.sendfile(__dirname + '/views/idea.html');
+    }
+ 	
+  });
+});
+
+router.get('/:anythingelse', function(req, res, next) {	
     res.sendfile(__dirname + '/views/error.html');
 });
 
-router.get('/login', function(req, res) {
-	console.log("in login");
-    res.sendfile(__dirname + '/views/login.html');
-});
 
 // router.get('/:username', function(req, res, next) {
 //   // gets the value for the named parameter user_id from the url
