@@ -18,7 +18,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 80; 		// set our port
+var port = process.env.PORT || 8000; 		// set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -58,12 +58,10 @@ router.get('/idea/:idea_id', function(req, res, next) {
   // lookup the user in the db so we can get their profile url
   Idea.findById(id , function(err, idea) {
     if (err) res.send(err);
-    if (idea == null) {
-    	console.log("not found!");
+    if (idea == null) {;
     	res.sendfile(__dirname + '/views/error.html');
     }
     else {
-    	console.log(idea);
 	    res.sendfile(__dirname + '/views/idea.html');
     }
  	
