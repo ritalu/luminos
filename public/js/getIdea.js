@@ -14,7 +14,7 @@ var loadProject = function() {
   console.log("load project");
     $.ajax({//initial ajax call 
     type:"GET",
-    url:"./api/getallprojectsswithuser",
+    url:"./api/getallprojectswithuser",
     success: function(data){
         console.log(data);
         renderIdea(data);
