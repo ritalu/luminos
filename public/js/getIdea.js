@@ -38,7 +38,8 @@ var renderIdea=function(data){
         '</div>'
       };
 
-      $('.idea-container').replaceWith(content);
     }
+    
+      $('.idea-container').replaceWith(content);
 }
 
