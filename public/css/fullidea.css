@@ -39,7 +39,8 @@
     width:80%;
     font-size:16px;
     line-height:20px;
-    margin:30px auto;
+    margin:10px auto;
+    margin-bottom:30px;
 }
 .idea .actions img {
     height:16px;
@@ -47,6 +48,7 @@
     margin-right:4px;
     vertical-align:center;
 }
+
 .rebound {
 	width:90%;
 	margin:0 auto;
@@ -128,6 +130,7 @@
 	right:0;
 	top:0;
     background-color:rgba(44,46,44,0.9);
+    padding-bottom:50px;
 }
 .projects .header {
 	color:rgba(244,78,78,1);
@@ -145,6 +148,7 @@
 	width:80%;
 	margin:0 auto;
 	height:100px;
+	margin-bottom:80px;
 }
 .proj .title {
 	text-transform:uppercase;
@@ -163,6 +167,42 @@
 .proj .team {
 	text-align:center;
 }
+
+
+.button {
+   border-radius:3px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  -ms-border-radius:3px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  display:cursor;
+  display:block;
+  border:0;
+  outline:none;
+  padding:15px 30px;
+  cursor:pointer;
+  background-color:rgba(244,78,78,0.8);
+  color:white;
+  font-size:14px;
+  font-weight:300;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  width:150px;
+  text-align:center;
+
+  margin: 20px auto;
+}
+.button:hover {
+	background-color:rgba(244,78,78,1);
+	color:black;
+	font-weight:300;
+	 -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
 .team .user {
 	display:inline-block;
 	width: 30px;
