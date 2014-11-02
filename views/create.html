@@ -40,11 +40,16 @@
 
         <div class="content">
             <div class="input">
-        		  <p class="title"><b>Got an idea for a Hack?</b></p>
-        		  <input type="text" name="name" id="idea_name" placeholder="Idea name" maxlength="40" required>
-        		  <textarea class="ta_desc" rows="10" cols="30" name="description" placeholder="Description" maxlength="500" required></textarea>
-        		  <input type="text" id="tags" name="tags" placeholder="Tags, ex: photo-sharing, travel, cars, geolocation" maxlength="30">
-        		  <input type="submit" class="button" value="Post It" >
+
+	      <div>
+                <form name="input">
+		  <p class="title"><b>Got an idea for a Hack?</b></font></p>
+		  <input type="text" name="name" id="idea_name" placeholder="Idea name" maxlength="40" required>
+		  <textarea class="ta_desc" name="description" id="description" rows="10" cols="30" placeholder="Description" maxlength="500" required></textarea>
+		  <input type="text" name="tags" id="tags" placeholder="Tags, ex: photo-sharing, travel, cars, geolocation" maxlength="30">
+		  <input type="submit" class="button" value="Post It">
+		</form>
+	      </div>
 		
 <!--	      <div>
 		<form action="" id="usrform">
@@ -62,23 +67,12 @@
             $(function() {
                     //loadIdea();               
                 $(".button").click(function() {
-                    name = $('#idea_name').val();
-                    desc = $('.ta_desc').val();
-                    tags = $('#tags').val();
-                    console.log(name + " " + desc + " " + tags);
-                    $.ajax({//initial ajax call 
-                        type:"POST",
-                        url:"./api/ideas",
-                        data:{"name": name, "description":desc, "tags":tags},
-                        success: function(data){
-                            console.log(data);
-                            document.location.href='./ideas'
-                        }
-                      });
+                    createIdea();
                 });
              });
             
          </script>
+
 
 	</body>
 </html>
