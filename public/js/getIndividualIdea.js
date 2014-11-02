@@ -49,6 +49,7 @@ var renderProjectForIdea=function(data){
 
         $('.projects').find('.proj').children('.title').empty();
         $('.projects').find('.proj').children('.title').append(data.name);
+        $('.projects').find("a").attr("href", "../project/" + data._id);
        // $('.projects').find('.proj').children('.desc').empty();
        // $('.projects').find('.proj').children('.desc').append(data.description);
 	}
