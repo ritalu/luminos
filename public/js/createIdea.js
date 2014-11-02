@@ -16,7 +16,7 @@ var createIdea=function() {
 var getFormContent = function() {
   var id = document.getElementById("idea_name").value;
   var des = document.getElementById("description").value;
-  var formData = {name:id,description:des}; //Array
+  return {name:id,description:des}; //Array
 }
 
 var displayResult = function (data) {
