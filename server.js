@@ -257,6 +257,7 @@ router.route('/api/getallideaswithuser')
 					}
 					else {
 						singleResult.username = 'anonymous';
+						singleResult.profilepic = 'luminos.me/public/img/octocat.png'
 					}
 					results.push(singleResult);
 					if (results.length == total) {
