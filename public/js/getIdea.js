@@ -32,7 +32,7 @@ var render=function(data){
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].projects.length +
-                '<img src="../public/img/icon_comment.png">' + "data4" + '</div>' +
+                '<img src="../public/img/icon_comment.png">' + 'data4' + '</div>' +
           '</div>' +
          '</div>'
       };
