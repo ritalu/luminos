@@ -5,7 +5,7 @@ var loadIdea=function() {
     url:"./api/getallideaswithuser",
     success: function(data){
         console.log(data);
-        render(data);
+        renderIdea(data);
     }
   });
 }
