@@ -43,7 +43,7 @@ console.log("rendering");
             '<a href="/"><div class="readmore">Read more</div></a>' +
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
-                '<img src="../public/img/icon_project.png">' + data[i].ideas.length +
+                '<img src="../public/img/icon_project.png">' + data[i].ideaName.length +
                 '<img src="../public/img/icon_comment.png">' + 'data4' + '</div>' +
          '</div>' +
         '</div>'
