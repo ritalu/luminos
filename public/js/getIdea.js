@@ -1,7 +1,8 @@
-var load=function(date, number, username) {
+var load=function() {
+    console.log("running load");
   $.ajax({//initial ajax call 
     type:"GET",
-    url:"./api/ideas",
+    url:"http://luminos.me/api/getallideaswithuser",
     success: function(data){
         console.log(data);
         render(data);
@@ -19,28 +20,66 @@ var render=function(data){
     }
     else {
       content +=
-        '<div class="strip">'+
-          '<div class="head">'+
-          data[i].title+
-           ' <div class="likes">'+
-            '  <img src="../public/img/heart.png")"><span id="num_likes">'+
-            data[i].likes +
-            '</span></div>'+
-          '</div>'+
-          '<a target="_blank" href="'+
-          data[i].link+
-          '"><div class="pic">'+
-           ' <img src="'+data[i].img+'">'+
-          '</div></a>'+
-          '<div class="more"><a href="/'+
-          data[i].comic+
-          '">By: '+
-          data[i].comic+
-          '</a></div>'+
-        '</div>'
+        '<div class="title">'+
+          data[i].name +
+           ' <span class="user">'+
+            ' <img src="http://exmoorpet.com/wp-content/uploads/2012/08/cat.png">' +
+            data[i].username + '</span>' +
+         '</div>' +
+         '<div class="desc">' +
+            '<div class="text">' + data[i].description + '</div>' +
+            '<a href="/"><div class="readmore">Read more</div></a>' +
+            '<div class="actions">' +
+                '<img src="../public/img/icon_like.png">' + data[i].likes.length +
+                '<img src="../public/img/icon_project.png">' + data[i].projects.length +
+                '<img src="../public/img/icon_comment.png">' + data4 + '</div>' +
+          '</div>' +
+         '</div>'
       };
 
-      $('#content').append(content);
+      $('.idea-container').append(content);
     }
-		
+}
+
+var loadProj=function() {
+    console.log("running load");
+  $.ajax({//initial ajax call 
+    type:"GET",
+    url:"./api/projects",
+    success: function(data){
+        console.log(data);
+        render(data);
+    }
+  });
+}
+
+
+var render=function(data){
+  console.log("rendering");
+	var content="";
+	for (var i = 0; i < data.length; i++) {
+		if (data[i] == null) {
+      break;
+    }
+    else {
+      content +=
+        '<div class="title">'+
+          data[i].name +
+           ' <span class="user">'+
+            ' <img src="http://exmoorpet.com/wp-content/uploads/2012/08/cat.png">' +
+            data[i].username + '</span>' +
+         '</div>' +
+         '<div class="desc">' +
+            '<div class="text">' + data[i].description + '</div>' +
+            '<a href="/"><div class="readmore">Read more</div></a>' +
+            '<div class="actions">' +
+                '<img src="../public/img/icon_like.png">' + data[i].likes.length +
+                '<img src="../public/img/icon_project.png">' + data[i].projects.length +
+                '<img src="../public/img/icon_comment.png">' + data4 + '</div>' +
+          '</div>' +
+         '</div>'
+      };
+
+      $('.idea-container').append(content);
+    }
 }
