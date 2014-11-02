@@ -19,6 +19,8 @@ GET:
 
 ./api/projects
 	- gets all projects in db
+./api/getallprojectswithuser
+	- gets all projects as well as linked users and idea
 ./api/project/PROJECTID
 	- gets single project by id
 
