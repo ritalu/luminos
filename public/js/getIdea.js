@@ -36,7 +36,7 @@ console.log("rendering");
           data[i].name +
            ' <span class="user">'+
             ' <img src="http://exmoorpet.com/wp-content/uploads/2012/08/cat.png">' +
-            data[i].username + '</span>' +
+            // data[i].username + '</span>' +
          '</div>' +
          '<div class="desc">' +
             '<div class="text">' + data[i].description + '</div>' +
