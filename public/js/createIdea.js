@@ -2,8 +2,9 @@
 var createIdea=function() {
     console.log("create idea");
   $.ajax({//initial ajax call 
-    type:"GET",
-    url:"http://luminos.me/",
+    type:"POST",
+    url:"./api/ideas",
+    data:getFormContent(),
     success: function(data){
         console.log(data);
 	console.log("submit=1&name="+idea_name);
@@ -13,7 +14,9 @@ var createIdea=function() {
 }
 
 var getFormContent = function() {
-  var formData = {name:"Pokemon Creator",description:"3D printer which can print all Pokemon."}; //Array
+  var id = document.getElementById("idea_name").value;
+  var des = document.getElementById("description").value;
+  var formData = {name:id,description:des}; //Array
 }
 
 var displayResult = function (data) {
