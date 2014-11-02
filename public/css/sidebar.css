@@ -31,10 +31,16 @@ a {
     left:0;
     background-color:rgba(44,46,44,1.0);
 }
+.sidebar .text {
+    font-size:30px;
+    text-align:center;
+    width:100%;
+    margin-top:-20px;
+}
 .menu {
     position:absolute;
     width:100%;
-    top:180px;
+    top:240px;
     left:0;
 }
 
