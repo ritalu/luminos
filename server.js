@@ -42,9 +42,17 @@ router.get('/projects.html', function(req, res) {
     res.sendfile(__dirname + '/views/projects.html');
 });
 
+router.get('/create.html', function(req, res) {
+    res.sendfile(__dirname + '/views/create.html');
+});
+
 router.get('/signup', function(req, res) {
 	console.log("in signup");
     res.sendfile(__dirname + '/views/signup.html');
+});
+
+router.get('/:anythingelse', function(req, res, next) {
+    res.sendfile(__dirname + '/views/error.html');
 });
 
 router.get('/login', function(req, res) {
