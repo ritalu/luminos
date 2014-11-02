@@ -1,36 +1,4 @@
 
-.logo {
-    width:100%;
-    height:50px;
-    line-height:50px;
-    font-size:40px;
-    font-weight: 300;
-    text-align:center;
-    margin: 20px auto;
-    color:rgba(255,255,255,0.7);
-}
-.logo img {
-    opacity:0.9;
-    -moz-opacity:0.9;
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-    -khtml-opacity:0.9;
-    height:30px;
-    position:relative;
-}
-
-@media only screen and (min-width: 800px) {
-    .logo {
-        height:120px;
-        line-height:120px;
-        font-size:70px;
-    }
-    .logo img {
-        height:60px;
-    }
-
-}
-
-
 
 .ideas {
     width:90%;
