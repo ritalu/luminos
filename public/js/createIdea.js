@@ -9,8 +9,8 @@ var createIdea=function() {
         console.log(data);
         //document.location.href='./ideas'
     }
-    document.location.href='./ideas'
   });
+  document.location.href='./ideas'
 }
 
 var getFormContent = function() {
