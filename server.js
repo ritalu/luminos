@@ -57,13 +57,10 @@ router.get('/idea/:idea_id', function(req, res, next) {
   var id = req.param('idea_id');
   // lookup the user in the db so we can get their profile url
   Idea.findById(id , function(err, idea) {
-    if (err) res.send(err);
-    if (idea == null) {
-    	console.log("not found!");
+    if (idea == null) {;
     	res.sendfile(__dirname + '/views/error.html');
     }
     else {
-    	console.log(idea);
 	    res.sendfile(__dirname + '/views/idea.html');
     }
  	

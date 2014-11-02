@@ -71,7 +71,7 @@ var renderIdea=function(data){
          '</div>' +
          '<div class="desc">' +
             '<div class="text">' + data[i].description + '</div>' +
-            '<a href="/"><div class="readmore">Read more</div></a>' +
+            '<a href="' + './idea/' + data[i]._id + '"><div class="readmore">Read more</div></a>' +
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].projects.length +
