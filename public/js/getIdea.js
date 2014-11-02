@@ -20,6 +20,7 @@ var renderIdea=function(data){
     }
     else {
       content +=
+       '<div class="idea-container">' +
         '<div class="title">'+
           data[i].name +
            ' <span class="user">'+
@@ -33,8 +34,8 @@ var renderIdea=function(data){
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].projects.length +
                 '<img src="../public/img/icon_comment.png">' + 'data4' + '</div>' +
-          '</div>' +
-         '</div>'
+         '</div>' +
+        '</div>'
       };
 
       $('.idea-container').replaceWith(content);
