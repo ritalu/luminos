@@ -263,12 +263,53 @@ router.route('/api/project/:project_id')
 });
 
 
+router.route('/api/getallprojectswithuser')
+	.get(function(req, res) {
+		var results = [];
+		var singleResult;
+		Project.find( function(err, project) {
+			if (err)
+				res.send(err);
+			var total = project.length;
+			project.forEach(function(i) {
+    			innerLoop(i)
+			});
+			//res.json(results);			
+
+			function innerLoop(project) {
+				Idea.findOne({projects: String(project._id)}, function(e, idea) {
+					if (e)
+						res.send(e);
+					singleResult = new Object();
+					singleResult.platform = project.platform;
+					singleResult.link = project.link;
+					singleResult.description = project.description;
+					singleResult.completed = project.completed;
+					singleResult.users = project.users;
+					singleResult.likes = project.likes;
+					singleResult.name = project.name;
+					singleResult._id = project._id;
+					singleResult.ideaID = idea._id;
+					singleResult.ideaName = idea.name;
+					results.push(singleResult);
+					console.log(singleResult);
+					if (results.length == total) {
+						res.json(results);
+					}
+		   		});
+			}
+
+	});
+});
+
+
 
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/', router);
+app.use('/public', express.static(__dirname+'/public'));
 
 // START THE SERVER
 // =============================================================================
