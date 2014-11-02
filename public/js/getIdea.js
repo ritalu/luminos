@@ -34,7 +34,7 @@ console.log("rendering");
        '<div class="idea-container">' +
         '<div class="title">'+
           data[i].name +
-           ' <span class="user">'+
+           ' <span class="user">' + 
             // ' <img src="http://exmoorpet.com/wp-content/uploads/2012/08/cat.png">' +
             // data[i].username + '</span>' +
          '</div>' +
