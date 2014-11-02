@@ -14,7 +14,7 @@
 	<body>
         <div class="sidebar">
             <div class="side-logo"></div>
-
+            <div class="text">luminos</div>
             <div class="menu">
                 <a href="./ideas">
                     <div class="menu-item">
@@ -69,8 +69,6 @@
                     createIdea();
                     event.preventDefault();
                     console.log("Idea Created");
-                    $('.menu-item').removeClass('active');
-                    $(this).children().first().addClass('active');
                 })
              });
          </script>
