@@ -42,7 +42,7 @@ router.get('/ideas.html', function(req, res) {
 
 router.get('/projects.html', function(req, res) {
 	console.log("in index");
-    res.sendfile(__dirname + '/views/ideas.html');
+    res.sendfile(__dirname + '/views/projects.html');
 });
 
 router.get('/signup', function(req, res) {
