@@ -44,7 +44,7 @@ console.log("rendering");
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].ideaName.length +
-                '<img src="../public/img/icon_comment.png">' + 'data4' + '</div>' +
+                '<img src="../public/img/icon_comment.png">' + '0' + '</div>' +
          '</div>' +
         '</div>'
       };
@@ -75,7 +75,7 @@ var renderIdea=function(data){
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].projects.length +
-                '<img src="../public/img/icon_comment.png">' + 'data4' + '</div>' +
+                '<img src="../public/img/icon_comment.png">' + '0' + '</div>' +
          '</div>' +
         '</div>'
       };
