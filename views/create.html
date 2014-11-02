@@ -41,12 +41,12 @@
         <div class="content">
             <div class="input">
 	      <div>
-                <form name="input" action="" method="get">
+                <form name="input" action="./api/ideas" method="Post">
 		  <p class="title"><b>Got an Idea?</b></font></p>
-		  <input type="text" name="idea_name" id="idea_name" placeholder="Idea name" maxlength="40">
+		  <input type="text" name="name" id="idea_name" placeholder="Idea name" maxlength="40" required>
 		  <textarea class="ta_desc" rows="10" cols="30" name="description" placeholder="Description" maxlength="500" required></textarea>
 		  <input type="text" name="tags" placeholder="Tags, ex: photo-sharing, travel, cars, geolocation" maxlength="30">
-		  <input type="submit" class="button" value="Post It" action="./ideas">
+		  <input type="submit" class="button" value="Post It">
 		</form>
 	      </div>
 		
