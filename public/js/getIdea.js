@@ -10,8 +10,8 @@ var loadIdea=function() {
   });
 }
 
-var loadPackage = function() {
-  console.log("load package");
+var loadProject = function() {
+  console.log("load project");
 }
 
 
