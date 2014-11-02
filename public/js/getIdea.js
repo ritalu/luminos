@@ -66,7 +66,7 @@ var renderIdea=function(data){
         '<div class="title">'+
           data[i].name +
            ' <span class="user">'+
-            ' <img src=' + data[i].profilepic + '>' +
+            ' <img src=http://' + data[i].profilepic + '>' +
             data[i].username + '</span>' +
          '</div>' +
          '<div class="desc">' +
