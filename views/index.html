@@ -14,13 +14,16 @@
 	<body>
         <div class="sidebar">
             <div class="menu">
-                <a href="">
+                <a href="javascript: 
+                loadIdea()
+                ">
                     <div class="menu-item active">
                         Ideas
                         <div class="triangle"></div>
                     </div>
                 </a>
-                <a href="">
+                <a href="javascript:
+                loadProject()">
                     <div class="menu-item">
                         Projects
                         <div class="triangle"></div>
@@ -59,9 +62,7 @@
 
         <script type="text/javascript">
             $(function() {               
-                console.log("test");    
-                loadIdea();
-                $(".menu a").click(function() {
+                    $(".menu a").click(function() {
                     event.preventDefault();
                     console.log("w");
                     $('.menu-item').removeClass('active');

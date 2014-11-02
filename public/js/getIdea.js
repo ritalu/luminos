@@ -10,6 +10,10 @@ var loadIdea=function() {
   });
 }
 
+var loadPackage = function() {
+  console.log("load package");
+}
+
 
 var renderIdea=function(data){
   console.log("rendering");
@@ -39,7 +43,7 @@ var renderIdea=function(data){
       };
 
     }
-    
+
       $('.idea-container').replaceWith(content);
 }
 
