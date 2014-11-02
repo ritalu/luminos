@@ -17,7 +17,7 @@ var loadProject = function() {
     url:"./api/getallprojectswithuser",
     success: function(data){
         console.log(data);
-        renderIdea(data);
+        renderProject(data);
     }
   });
 }
