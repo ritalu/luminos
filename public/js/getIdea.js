@@ -2,7 +2,7 @@ var load=function() {
     console.log("running load");
   $.ajax({//initial ajax call 
     type:"GET",
-    url:"http://luminos.me/api/getallideaswithuser",
+    url:"./api/getallideaswithuser",
     success: function(data){
         console.log(data);
         render(data);
@@ -32,7 +32,7 @@ var render=function(data){
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].projects.length +
-                '<img src="../public/img/icon_comment.png">' + data4 + '</div>' +
+                '<img src="../public/img/icon_comment.png">' + "data4" + '</div>' +
           '</div>' +
          '</div>'
       };
