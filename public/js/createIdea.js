@@ -7,8 +7,9 @@ var createIdea=function() {
     data:getFormContent(),
     success: function(data){
         console.log(data);
-        document.location.href='./ideas'
+        //document.location.href='./ideas'
     }
+    document.location.href='./ideas'
   });
 }
 
