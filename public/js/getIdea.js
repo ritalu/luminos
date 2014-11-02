@@ -50,7 +50,6 @@ console.log("rendering");
       };
 
     }
-
       $('.idea-container').replaceWith(content);
 }
 

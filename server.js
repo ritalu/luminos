@@ -32,7 +32,17 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res) {
 	console.log("in index");
-    res.sendfile(__dirname + '/views/index.html');
+    res.sendfile(__dirname + '/views/ideas.html');
+});
+
+router.get('/ideas.html', function(req, res) {
+	console.log("in index");
+    res.sendfile(__dirname + '/views/ideas.html');
+});
+
+router.get('/projects.html', function(req, res) {
+	console.log("in index");
+    res.sendfile(__dirname + '/views/ideas.html');
 });
 
 router.get('/signup', function(req, res) {
