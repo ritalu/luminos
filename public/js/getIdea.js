@@ -79,6 +79,7 @@ var renderProj=function(data){
                 '<img src="../public/img/icon_comment.png">' + 'data4' + '</div>' +
           '</div>' +
          '</div>'
+        '</div>'
       };
         //Set inner html to nothing and do append.
       $('.idea-container').replaceWith(content);
