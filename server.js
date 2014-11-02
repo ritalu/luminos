@@ -251,8 +251,13 @@ router.route('/api/getallideaswithuser')
 					singleResult.likes = idea.likes;
 					singleResult.name = idea.name;
 					singleResult._id = idea._id;
+					if (user != null) {
 					singleResult.username = user.username;
 					singleResult.profilepic = user.profilepic;
+					}
+					else {
+						singleResult.username = 'anonymous';
+					}
 					results.push(singleResult);
 					if (results.length == total) {
 						res.json(results);
