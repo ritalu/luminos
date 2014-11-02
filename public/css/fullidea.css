@@ -193,6 +193,7 @@
   text-align:center;
 
   margin: 20px auto;
+  margin-top:40px;
 }
 .button:hover {
 	background-color:rgba(244,78,78,1);
