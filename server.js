@@ -42,15 +42,35 @@ router.get('/projects.html', function(req, res) {
     res.sendfile(__dirname + '/views/projects.html');
 });
 
+router.get('/create.html', function(req, res) {
+    res.sendfile(__dirname + '/views/create.html');
+});
+
 router.get('/signup', function(req, res) {
 	console.log("in signup");
     res.sendfile(__dirname + '/views/signup.html');
 });
 
-router.get('/login', function(req, res) {
-	console.log("in login");
-    res.sendfile(__dirname + '/views/login.html');
+router.get('/idea/:idea_id', function(req, res, next) {	
+
+  var url;
+  var id = req.param('idea_id');
+  // lookup the user in the db so we can get their profile url
+  Idea.findById(id , function(err, idea) {
+    if (idea == null) {;
+    	res.sendfile(__dirname + '/views/error.html');
+    }
+    else {
+	    res.sendfile(__dirname + '/views/idea.html');
+    }
+ 	
+  });
 });
+
+router.get('/:anythingelse', function(req, res, next) {	
+    res.sendfile(__dirname + '/views/error.html');
+});
+
 
 // router.get('/:username', function(req, res, next) {
 //   // gets the value for the named parameter user_id from the url

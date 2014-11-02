@@ -35,8 +35,8 @@ console.log("rendering");
         '<div class="title">'+
           data[i].name +
            ' <span class="user">'+
-            ' <img src="http://exmoorpet.com/wp-content/uploads/2012/08/cat.png">' +
-            data[i].username + '</span>' +
+            // ' <img src="http://exmoorpet.com/wp-content/uploads/2012/08/cat.png">' +
+            // data[i].username + '</span>' +
          '</div>' +
          '<div class="desc">' +
             '<div class="text">' + data[i].description + '</div>' +
@@ -66,12 +66,12 @@ var renderIdea=function(data){
         '<div class="title">'+
           data[i].name +
            ' <span class="user">'+
-            ' <img src="http://exmoorpet.com/wp-content/uploads/2012/08/cat.png">' +
+            ' <img src=http://' + data[i].profilepic + '>' +
             data[i].username + '</span>' +
          '</div>' +
          '<div class="desc">' +
             '<div class="text">' + data[i].description + '</div>' +
-            '<a href="/"><div class="readmore">Read more</div></a>' +
+            '<a href="' + './idea/' + data[i]._id + '"><div class="readmore">Read more</div></a>' +
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].projects.length +
