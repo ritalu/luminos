@@ -51,6 +51,10 @@ router.get('/signup', function(req, res) {
     res.sendfile(__dirname + '/views/signup.html');
 });
 
+router.get('/:anythingelse', function(req, res, next) {
+    res.sendfile(__dirname + '/views/error.html');
+});
+
 router.get('/login', function(req, res) {
 	console.log("in login");
     res.sendfile(__dirname + '/views/login.html');
