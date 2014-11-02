@@ -49,15 +49,15 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 
-  background-color:rgba(244,78,78,0.8);
-  color:white;
+  background-color:rgba(255,255,255,1);
+  color:#000;
 
   -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.05);
   box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.05);
 }
 
 input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, textarea:hover {
-  background-color:rgba(244,78,78,1);
+  background-color:#fcd9d9;
     -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -67,7 +67,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   outline:none;
   outline-color: transparent;
   outline-offset: 0;
-  background-color:rgba(255,255,255,1);
+  background-color:#fcd9d9;
   color:black;
     -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -90,8 +90,8 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   margin:25px auto;
   padding:15px 30px;
   cursor:pointer;
-  background-color:rgba(58,155,162,0.8);
-  color:white;
+  background-color:#ef8e8e;
+  color:black;
   font-size:16px;
   font-family: "Roboto", sans-serif;
   text-transform:uppercase;
@@ -99,8 +99,8 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 /*   width:100px; */
 }
 .button:hover {
-	background-color:rgb(255,255,255);
-	color:#333;
+	background-color:rgba(244,78,78,1);
+	color:white;
 }
 a.button {
   width:100px;
