@@ -63,6 +63,7 @@ var renderProj=function(data){
     }
     else {
       content +=
+       '<div class="idea-container">' +
         '<div class="title">'+
           data[i].name +
            ' <span class="user">'+
@@ -79,7 +80,7 @@ var renderProj=function(data){
           '</div>' +
          '</div>'
       };
-
+        //Set inner html to nothing and do append.
       $('.idea-container').replaceWith(content);
     }
 }
