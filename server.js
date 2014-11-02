@@ -12,6 +12,8 @@ var Project     = require('./app/models/project');
 var express    = require('express'); 		// call express
 var app        = express(); 				// define our app using express
 var bodyParser = require('body-parser');
+var path = require('path');
+var favicon = require('serve-favicon');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -29,6 +31,8 @@ router.use(function(req, res, next) {
 	// do logging
 	next(); // make sure we go to the next routes and don't stop here
 });
+app.use(favicon(path.join(__dirname,'public','img','favicon.ico')));
+
 
 router.get('/', function(req, res) {
     res.sendfile(__dirname + '/views/ideas.html');
