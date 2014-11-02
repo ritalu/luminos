@@ -57,7 +57,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
 }
 
 input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, textarea:hover {
-  background-color:rgba(244,78,78,1);
+  background-color:#fcd9d9;
     -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
