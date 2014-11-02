@@ -1,4 +1,4 @@
-var load=function() {
+var loadIdea=function() {
     console.log("running load");
   $.ajax({//initial ajax call 
     type:"GET",
@@ -11,7 +11,7 @@ var load=function() {
 }
 
 
-var render=function(data){
+var renderIdea=function(data){
   console.log("rendering");
 	var content="";
 	for (var i = 0; i < data.length; i++) {
@@ -52,9 +52,9 @@ var loadProj=function() {
     }
   });
 }
+()
 
-
-var render=function(data){
+var renderProj=function(data){
   console.log("rendering");
 	var content="";
 	for (var i = 0; i < data.length; i++) {
@@ -75,7 +75,7 @@ var render=function(data){
             '<div class="actions">' +
                 '<img src="../public/img/icon_like.png">' + data[i].likes.length +
                 '<img src="../public/img/icon_project.png">' + data[i].projects.length +
-                '<img src="../public/img/icon_comment.png">' + data4 + '</div>' +
+                '<img src="../public/img/icon_comment.png">' + 'data4' + '</div>' +
           '</div>' +
          '</div>'
       };
