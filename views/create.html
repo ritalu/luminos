@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+	<head>
+	  <meta charset="utf-8">
+	  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,300">
+	  <title>luminos</title>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	  <script src="./../public/js/createIdea.js"></script>
+	  <link href="./../public/css/sidebar.css" rel="stylesheet">
+	  <link href="./../public/css/create.css" rel="stylesheet">
+	  <link href="./../public/css/index.css" rel="stylesheet">
+	</head>
+
+	<body>
+        <div class="sidebar">
+            <div class="menu">
+                <a href="javascript:;" onclick = "loadIdea();">
+                    <div class="menu-item active">
+                        Ideas
+                        <div class="triangle"></div>
+                    </div>
+                </a>
+                <a href="javascript:;" onclick = "loadProject();">
+                    <div class="menu-item">
+                        Projects
+                        <div class="triangle"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div class="logo">
+                <img src="../public/img/logo_red.png"></img>
+                luminos
+            </div>
+            <div class="input">
+	      <div>
+                <form name="input" action="" method="get">
+		  <p class="title"><b>Share your idea</b></font></p>
+		  <input type="text" name="idea_name" id="idea_name" placeholder="Idea name" maxlength="40">
+		  <textarea class="ta_desc" rows="10" cols="30" name="description" placeholder="Description" maxlength="500" required></textarea>
+		  <input type="text" name="tags" placeholder="Tags, ex: photo-sharing, travel, cars, geolocation" maxlength="30">
+		  <input type="submit" class="button" value="Post Idea!">
+		</form>
+	      </div>
+		
+<!--	      <div>
+		<form action="" id="usrform">
+		  <input type="text" name="usrname" placeholder="Idea name">
+		  <input type="submit" value="Post Idea!">
+		</form>
+		<textarea placeholder="Describe yourself here..." rows="10" cols="30" name="description" form="usrform" required>
+		</textarea>
+              </div>-->
+                
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(function() {
+                    //loadIdea();               
+                    $(".button").click(function() {
+                    createIdea();
+                    event.preventDefault();
+                    console.log("Idea Created");
+                    $('.menu-item').removeClass('active');
+                    $(this).children().first().addClass('active');
+                })
+             });
+         </script>
+
+	</body>
+</html>
