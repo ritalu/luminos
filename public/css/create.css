@@ -1,21 +1,5 @@
-/*@font-face {
-  font-family: 'Roboto Light';
-  src: url('Roboto-Light.ttf')  format('truetype')
-}*/
 
-/*html, body {
-	height:100%;
-	width:100%;
-	margin:0;
-	padding:0;
-}*/
-/*body {	
-	display:table;
-	background:url('../img/bg.jpg') center center no-repeat #ddd;
-	background-size:cover;
-}*/
-
-.menu, .form {
+.form {
 	display:table-cell;
 	vertical-align:middle;
 	width:100%;
@@ -24,6 +8,8 @@
 
 .title {
 	text-align:center;
+  text-transform:uppercase;
+  letter-spacing:2px;
 	position:relative;
 	font-size:20px;
 	color: rgba(255,255,255,0.7);
@@ -45,30 +31,6 @@ form {
 	resize: none;
 }
 
-/*a {
-	display:block;
-	margin:0 auto;
-	font-family:'Roboto Light';
-	font-size:20px;
-	text-transform:uppercase;
-	letter-spacing:2px;
-	text-align:center;
-	padding:40px;
-	width:300px;
-	text-decoration:none;
-	color:white;
-	background-color:rgba(0,0,0,0.5);
-	 -webkit-transition: all 0.3s ease-out;
-  	-moz-transition: all 0.3s ease-out;
-  	transition: all 0.3s ease-out;
-}
-a:hover {
-	background-color:white;
-	color:black;
-	-webkit-transition: all 0.3s ease-out;
-  	-moz-transition: all 0.3s ease-out;
-  	transition: all 0.3s ease-out;
-}*/
 
 input[type="text"], input[type="password"], input[type="email"], textarea {
   display:block;
@@ -87,7 +49,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 
-  background-color:rgba(58,155,162,0.8);
+  background-color:rgba(244,78,78,0.8);
   color:white;
 
   -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.05);
@@ -95,7 +57,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
 }
 
 input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, textarea:hover {
-  background-color:rgba(255,255,255,0.9);
+  background-color:rgba(244,78,78,1);
     -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -105,8 +67,8 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   outline:none;
   outline-color: transparent;
   outline-offset: 0;
-  background-color:rgba(58,155,162,0.2);
-  color:white;
+  background-color:rgba(255,255,255,1);
+  color:black;
     -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -146,21 +108,3 @@ a.button {
   margin-top:50px;
   padding:10px 20px;
 }
-/*.results {
-  display:block;
-  line-height:40px;
-  margin:0 auto;
-  padding:50px;
-  width:400px;
-  background-color:rgba(0,0,0,0.5);
-  color:white;
-  letter-spacing:4px;
-  font-family:'Roboto Light';
-  font-size:28px;
-}*/
-/*h1 {
-  display:inline;
-  color:rgb(250,220,148);
-  font-size:28px;
-  font-family:'Roboto Light';
-}*/
