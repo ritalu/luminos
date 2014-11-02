@@ -7,22 +7,21 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="./../public/js/getIdea.js"></script>
         <link href="./../public/css/sidebar.css" rel="stylesheet">
+        <link href="./../public/css/fullidea.css" rel="stylesheet">
 
 	</head>
 
 	<body>
         <div class="sidebar">
-            <div class="side-logo">
-                
-            </div>
+            <div class="side-logo"></div>
             <div class="menu">
-                <a href="">
+                <a href="./ideas.html">
                     <div class="menu-item">
                         Ideas
                         <div class="triangle"></div>
                     </div>
                 </a>
-                <a href="">
+                <a href="./projects.html">
                     <div class="menu-item">
                         Projects
                         <div class="triangle"></div>
@@ -31,21 +30,92 @@
             </div>
         </div>
 
-        
+        <div class="content">
+
+            <div class="idea">
+                <div class="title">
+                   GYM. TAN. HACK.
+                   <div class="like">
+                    <img src="../public/img/icon_like_red.png"> 20
+                   </div>
+                </div>
+                <div class="desc">
+                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div class="actions">
+                    <img src="../public/img/icon_comment.png"> 0
+                </div>   
+                <div class="rebound">
+                    <div class="title">ideas inspired by this:</div>
+                    <div class="rb">
+                        <div class="title">
+                         Title
+                        </div>
+                        <div class="desc"> 
+                            <div class="text">Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. 
+                            </div>
+                            <a href="/"><div class="readmore">Read more</div></a>
+                        </div>
+                    </div>
+                    <div class="rb">
+                        <div class="title">
+                         Title
+                        </div>
+                        <div class="desc"> 
+                            <div class="text">Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. 
+                            </div>
+                        <a href="/"><div class="readmore">Read more</div></a>
+                    </div>
+                    </div>
+                    <div class="rb">
+                        <div class="title">
+                         Title
+                        </div>
+                        <div class="desc"> 
+                            <div class="text">Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. Bookface is a social website. This idea would probably succeed if it got funded with at least $300,000 in startup capital. 
+                            </div>
+                        <a href="/"><div class="readmore">Read more</div></a>
+                    </div>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="projects">
+                <div class="header"> 
+                    <img src="../public/img/icon_project_red.png"> 
+                    Projects (2):
+                </div>
+                <a href="projectlink">
+                    <div class="proj">
+                        <div class="title">proj name yo</div>
+                        <div class="desc">
+                            Status: complete 
+                            <br>
+                            Team: 3/5
+                            <br>
+                            <div class="team">
+                                <div class="user" style="background:url('http://www.pak101.com/funnypictures/Animals/2012/8/2/the_monopoly_cat_vbgkd_Pak101(dot)com.jpg') center center no-repeat;background-size:cover;"></div>
+                                <div class="user" style="background:url('http://www.pak101.com/funnypictures/Animals/2012/8/2/the_monopoly_cat_vbgkd_Pak101(dot)com.jpg') center center no-repeat;background-size:cover;"></div>
+                                <div class="user" style="background:url('http://www.pak101.com/funnypictures/Animals/2012/8/2/the_monopoly_cat_vbgkd_Pak101(dot)com.jpg') center center no-repeat;background-size:cover;"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </a>
+
+
+
+            </div>
+
+        </div>
         
 
 
 
         <script type="text/javascript">
-            $(function() {               
-                $(".menu a").click(function() {
-                    event.preventDefault();
-                    console.log("w");
-                    $('.menu-item').removeClass('active');
-                    $(this).children().first().addClass('active');
-                })
-             });
-         </script>
+          
+
+        </script>
 
     </body>
 </html>
