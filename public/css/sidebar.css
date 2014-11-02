@@ -1,0 +1,92 @@
+html, body {
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    font-family: "Roboto", sans-serif;
+    font-size:14px;
+    color:#fff;
+    background-color:rgba(44,46,44,0.85);
+}
+a {
+    text-decoration:none;
+    color:#fff;
+}
+
+.content {
+    position:fixed;
+    overflow:auto;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin-left:200px;
+
+}
+.sidebar {
+    position:fixed;
+    height:100%;
+    width:200px;
+    top:0;
+    left:0;
+    background-color:rgba(44,46,44,1.0);
+}
+.menu {
+    position:absolute;
+    width:100%;
+    top:180px;
+    left:0;
+}
+
+.menu-item, .menu-item:hover, .menu-item.active, .menu-item:hover a, .menu-item.active a, .menu-item.active.triangle, .triangle, .idea-container .readmore, .idea-container .readmore:hover{
+    -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.menu-item {
+    position:relative;
+    width:200px;
+    cursor:pointer;
+    text-align:center;
+    height:60px;
+    line-height:60px;
+}
+.menu-item:hover {
+    background-color:rgba(64,181,136,0.7);
+}
+.menu-item.active {
+   background-color:#fff;
+}
+
+.menu-item.active{
+   color:rgba(44,46,44,1.0);
+}
+.menu-item:hover .triangle {
+     opacity:0.7;
+    -moz-opacity:0.7;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    -khtml-opacity:0.7;
+    border-left: 15px solid rgba(64,181,136,1);
+}
+.menu-item.active .triangle{
+    opacity:1;
+    -moz-opacity:1;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    -khtml-opacity:1;
+    border-left: 15px solid #fff;
+}
+
+.triangle {
+    opacity:0;
+    -moz-opacity:0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    -khtml-opacity:0;
+    position:absolute;
+    right:-15px;
+    top:0;
+    width: 0;
+    height: 0;
+    border-left: 15px solid rgba(64,181,136,1);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
