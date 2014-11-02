@@ -7,8 +7,7 @@ var createIdea=function() {
     data:getFormContent(),
     success: function(data){
         console.log(data);
-	console.log("submit=1&name="+idea_name);
-        displayResult(data);
+        document.location.href='./ideas'
     }
   });
 }
@@ -17,8 +16,4 @@ var getFormContent = function() {
   var id = document.getElementById("idea_name").value;
   var des = document.getElementById("description").value;
   return {name:id,description:des}; //Array
-}
-
-var displayResult = function (data) {
-    console.log("final idea created!");
 }
