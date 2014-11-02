@@ -78,7 +78,10 @@ var renderProject=function(data){
         $('.project').children('.title').empty();
         $('.project').children('.title').append(content);
         $('.project').children('.desc').empty();
-        content =  '<span>Status:</span>' + data.completed + '<br>' + 
+        var status = "";
+        if (data.completed == false) status = "In progress";
+        else status = "Complete";
+        content =  '<span>Status:</span>' + status + '<br>' + 
                     '<span>Inspired by:</span> <a href="../idea/' +  '">' + "this idea" + '</a><br>' + 
                     '<span>URL:</span> <a href="http://' + data.link + '">' + data.link + '</a><br>' +  
                     // <span>Platform:</span> android<br>
