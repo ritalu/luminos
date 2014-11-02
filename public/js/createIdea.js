@@ -8,11 +8,11 @@ var createIdea=function() {
     success: function(data){
         console.log(data);
         //document.location.href='./ideas'
-	window.location = "./ideas"
+	window.location = "./ideas";
     }
   });
-  window.location = "./ideas"
-  document.location.href='./ideas'
+  window.location = "./ideas";
+  document.location.href='./ideas';
 }
 
 var getFormContent = function() {
