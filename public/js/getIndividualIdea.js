@@ -87,7 +87,7 @@ var renderProject=function(data){
                     '<span>URL:</span> <a href="http://' + data.link + '">' + data.link + '</a><br>' +  
                     // <span>Platform:</span> android<br>
                     // <span>Category:</span> social media 
-                    +'<br><br>'+
+                    '<br><br>'+
                    data.description;
         $('.project').children('.desc').append(content);
 
