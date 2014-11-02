@@ -34,15 +34,15 @@ router.get('/', function(req, res) {
     res.sendfile(__dirname + '/views/ideas.html');
 });
 
-router.get('/ideas.html', function(req, res) {
+router.get('/ideas', function(req, res) {
     res.sendfile(__dirname + '/views/ideas.html');
 });
 
-router.get('/projects.html', function(req, res) {
+router.get('/projects', function(req, res) {
     res.sendfile(__dirname + '/views/projects.html');
 });
 
-router.get('/create.html', function(req, res) {
+router.get('/create', function(req, res) {
     res.sendfile(__dirname + '/views/create.html');
 });
 
@@ -62,6 +62,22 @@ router.get('/idea/:idea_id', function(req, res, next) {
     }
     else {
 	    res.sendfile(__dirname + '/views/idea.html');
+    }
+ 	
+  });
+});
+
+router.get('/project/:idea_id', function(req, res, next) {	
+
+  var url;
+  var id = req.param('idea_id');
+  // lookup the user in the db so we can get their profile url
+  Project.findById(id , function(err, idea) {
+    if (idea == null) {;
+    	res.sendfile(__dirname + '/views/error.html');
+    }
+    else {
+	    res.sendfile(__dirname + '/views/project.html');
     }
  	
   });
